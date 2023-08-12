@@ -23,7 +23,7 @@ Le site de la promo Cheesecake v1.0         |
 const express = require('express');     // On importe express
 const app = express();                  // On a initialisé notre server express dans une variable
 
-const students = require('./student'); // On importe la liste des étudiants
+const students = require('./students'); // On importe la liste des étudiants
 const promo = require('./promo');       // On importe les détails de la promo
 
 
@@ -99,31 +99,4 @@ function createStudentsListPage(studentsList) {
  */
 
 
-
-
-
-// ########
-// Bref récap sur les boucles
-// ########
-
-
-
-    let html = "<ul>"          // "<ul>"
-    
-    html += "<li>item 1</li>"  // "<ul><li>item</li>"
-
-    html += "<li>item 2</li>"
-
-    html += "<li>item 3</li>"
-
-    html += "<li>item 4</li>"
-
-    html += '</ul>';           // "<ul><li>item 1</li></ul>""
-
-
-    let html2 = "<ul>";
-
-    for(let index = 1; index < 5; index++) {
-        html2 += `<li>item ${index}</li>`
-    }
 
