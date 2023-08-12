@@ -26,8 +26,8 @@ const app = express();                  // On a initialisé notre server express
 const students = require('./students'); // On importe la liste des étudiants
 const promo = require('./promo');       // On importe les détails de la promo
 
-app.use(express.static('public/css'));
-app.use(express.static('public/img'));
+app.use(express.static('public/css')); // Import via le dossier Public du dossier CSS
+app.use(express.static('public/img')); // Import via le dossier Public du dossier d'images
 
 // ##############################
 // --- Routes ---
@@ -40,11 +40,8 @@ app.get('/students', (req, res) => {            // On créé une route pour affi
     res.send(createStudentsListPage(students));
 });
 
-app.get('/students/:githubUsername', (req, res) => {
-    const githubUsername = req.params.githubUsername;
-    const student = students.find(student => student.pseudoGithub === githubUsername);
-    
-     res.send(createStudentDetailPage(student));
+app.get('/students/:githubUsername', (req, res) => {            // On créé une route pour afficher le détail d'un étudiant
+
 });
 
 
@@ -66,34 +63,33 @@ function createHomePage() {
     ` <!DOCTYPE html>
         <html>
         <head>
-        <link rel="stylesheet" type="text/css" href="/reset.css">
-        <link rel="stylesheet" type="text/css" href="/styles.css">
+            <link rel="stylesheet" type="text/css" href="/reset.css">
+            <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
-        <header><a href="/"><img class="logo" src="/CC-logo.png"></a></header>
+            <header><a href="/"><img class="logo" src="/CC-logo.png"></a></header>
             <main>
-            <div class="main__container">
-                <div class="main__container-left">
-                    <h1 class="main__title">The unofficial website of the promo Cheesecake</h1>
-                    <p>Cette promo est animée par ${promo.helper}, et ${promo.prof} !</p>
-                    <div class="main__button-container">
-                        <a href="/students" class="main__button">Voir la liste des ${students.length} étudiants</a>
+                <div class="main__container">
+                    <div class="main__container-left">
+                        <h1 class="main__title">The unofficial website of the promo Cheesecake</h1>
+                        <p>Cette promo est animée par ${promo.helper}, et ${promo.prof} !</p>
+                        <div class="main__button-container">
+                            <a href="/students" class="main__button">Voir la liste des ${students.length} étudiants</a>
+                        </div>
+                    </div>
+                    <div class="main__container-right">
+                        <img class="main__img" src="/container-right-img.png">
                     </div>
                 </div>
-                <div class="main__container-right">
-                    <img class="main__img" src="/container-right-img.png">
-                </div>
+                <div class="main__bottom-container">
+                    <h3>Ils ne nous ont pas encore fait confiance</h3>
+                    <div class="main__logos-container">
+                        <a href="https://www.ibm.com/fr-fr"><img class="main__logos" src="/ibm-logo.png"></a>
+                        <a href="https://www.oracle.com/fr/"><img class="main__logos" src="/oracle-logo.png"></a>
+                        <a href="https://www.spacex.com/"><img class="main__logos" src="/spacex-logo.png"></a>
+                        <a href="https://www.microsoft.com/fr-fr"><img class="main__logos" src="/microsoft-logo.png"></a>
+                    </div>
             </div>
-        <div class="main__bottom-container">
-            <h3>Ils ne nous ont pas encore fait confiance</h3>
-            <div class="main__logos-container">
-                <a href="https://www.ibm.com/fr-fr"><img class="main__logos" src="/ibm-logo.png"></a>
-                <a href="https://www.oracle.com/fr/"><img class="main__logos" src="/oracle-logo.png"></a>
-                <a href="https://www.spacex.com/"><img class="main__logos" src="/spacex-logo.png"></a>
-                <a href="https://www.microsoft.com/fr-fr"><img class="main__logos" src="/microsoft-logo.png"></a>
-            </div>
-        </di>
-
             </main>
         </body>
         </html>
@@ -106,17 +102,18 @@ function createHomePage() {
  * 
  * Génère la page avec la liste des étudiants de la promo
  */
+
 function createStudentsListPage(studentsList) {
     let html = 
     `
     <!DOCTYPE html>
     <html>
-    <head>
-    <link rel="stylesheet" type="text/css" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
-    </head>
-    <body>
-        <header><a href="/"><img class="logo" src="/CC-logo.png"></a></header>
+        <head>
+            <link rel="stylesheet" type="text/css" href="/reset.css">
+            <link rel="stylesheet" type="text/css" href="/styles.css">
+        </head>
+        <body>
+            <header><a href="/"><img class="logo" src="/CC-logo.png"></a></header>
         
         <main class="main__students-container">
         
@@ -124,14 +121,14 @@ function createStudentsListPage(studentsList) {
     for (const student of studentsList) {
         html += `
         
-        <a href="#" class="main__students-cards"><img class="user-icon" src="/user-icon.png">${student.firstname} ${student.lastname}</a>
+            <a href="#" class="main__students-cards"><img class="user-icon" src="/user-icon.png">${student.firstname} ${student.lastname}</a>
         
         `;
     }
     html += `
         
         </main>
-    </body>
+        </body>
     </html>
     `;
 
