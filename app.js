@@ -26,6 +26,8 @@ const app = express();                  // On a initialisé notre server express
 const students = require('./students'); // On importe la liste des étudiants
 const promo = require('./promo');       // On importe les détails de la promo
 
+app.use(express.static('public/css'));
+app.use(express.static('public/img'));
 
 // ##############################
 // --- Routes ---
@@ -58,13 +60,22 @@ app.listen(3000); // On branche notre server au port 3000 et on lui demande d'é
  */
 function createHomePage() {
     const html = 
-    `
-        <h1>${promo.name}</h1>
-
+    ` <!DOCTYPE html>
+        <html>
+        <head>
+        <link rel="stylesheet" type="text/css" href="/reset.css">
+        <link rel="stylesheet" type="text/css" href="/styles.css">
+        </head>
+        <body>
+        <header><img class="logo" src="/CC-logo.png"></span></header>
+            <main class="main__container">
         <p>Il y a ${students.length} apprenants dans cette promo.</p>
         <p>Cette promo est animée par ${promo.helper}, et ${promo.prof} !</p>
 
-        <a href="/students">Voir la liste des étudiants</a>
+        <a href="/students" class="main__button">Voir la liste des étudiants</a>
+            </main>
+        </body>
+        </html>
     `;
     return html;
 }
@@ -77,6 +88,13 @@ function createHomePage() {
 function createStudentsListPage(studentsList) {
     let html = 
     `
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    </head>
+    <body>
         <ul>
     `;
     for (const student of studentsList) {
@@ -84,9 +102,13 @@ function createStudentsListPage(studentsList) {
         <li>
             <a href="">${student.firstname} ${student.lastname} - ${student.pseudoGithub} </a>
         </li>
-        `
+        `;
     }
-    html += '</ul>';
+    html += `
+        </ul>
+    </body>
+    </html>
+    `;
 
     return html;
 }
