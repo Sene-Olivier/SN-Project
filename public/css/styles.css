@@ -10,10 +10,7 @@ body {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
     gap: 50px;
 }
 
@@ -26,6 +23,14 @@ header {
 .logo {
     padding: 30px
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .main__container {
     display: flex;
     justify-content: center;
@@ -97,13 +102,8 @@ header {
     transform: translateY(-7px);
 }
 
-a {
-    color: black;
-}
 
-a:hover {
-    color: purple;
-}
+
 
 .main__bottom-container {
     display: flex;
@@ -129,4 +129,45 @@ a:hover {
 
 .main__logos {
     width: 200px;
+}
+
+/* STUDENTS PAGE */
+
+.main__students-container {
+    margin: auto;
+    border: 1px solid darkgrey;
+    width: 85%;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px;
+}
+
+
+
+.main__students-cards {
+    background-color: #9279FF;
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
+    width: 40%; 
+    box-sizing: border-box;
+    display: flex;
+    gap: 5px;
+    font-weight: 600;
+    align-items: center;
+    transition: 500ms;
+    box-shadow: 8px 7px 15px -8px rgba(0,0,0,0.55);
+}
+
+.main__students-cards:hover {
+    transform: scale(1.02);
+    color: white;
+}
+
+.user-icon {
+    width: 40px;
 }

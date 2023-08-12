@@ -40,8 +40,11 @@ app.get('/students', (req, res) => {            // On créé une route pour affi
     res.send(createStudentsListPage(students));
 });
 
-app.get('/students/:githubUsername', (req, res) => {            // On créé une route pour afficher le détail d'un étudiant
-
+app.get('/students/:githubUsername', (req, res) => {
+    const githubUsername = req.params.githubUsername;
+    const student = students.find(student => student.pseudoGithub === githubUsername);
+    
+     res.send(createStudentDetailPage(student));
 });
 
 
@@ -67,7 +70,7 @@ function createHomePage() {
         <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
-        <header><img class="logo" src="/CC-logo.png"></header>
+        <header><a href="/"><img class="logo" src="/CC-logo.png"></a></header>
             <main>
             <div class="main__container">
                 <div class="main__container-left">
@@ -84,10 +87,10 @@ function createHomePage() {
         <div class="main__bottom-container">
             <h3>Ils ne nous ont pas encore fait confiance</h3>
             <div class="main__logos-container">
-                <img class="main__logos" src="/ibm-logo.png">
-                <img class="main__logos" src="/oracle-logo.png">
-                <img class="main__logos" src="/spacex-logo.png">
-                <img class="main__logos" src="/microsoft-logo.png">
+                <a href="https://www.ibm.com/fr-fr"><img class="main__logos" src="/ibm-logo.png"></a>
+                <a href="https://www.oracle.com/fr/"><img class="main__logos" src="/oracle-logo.png"></a>
+                <a href="https://www.spacex.com/"><img class="main__logos" src="/spacex-logo.png"></a>
+                <a href="https://www.microsoft.com/fr-fr"><img class="main__logos" src="/microsoft-logo.png"></a>
             </div>
         </di>
 
@@ -113,17 +116,21 @@ function createStudentsListPage(studentsList) {
     <link rel="stylesheet" type="text/css" href="/styles.css">
     </head>
     <body>
-        <ul>
+        <header><a href="/"><img class="logo" src="/CC-logo.png"></a></header>
+        
+        <main class="main__students-container">
+        
     `;
     for (const student of studentsList) {
         html += `
-        <li>
-            <a href="">${student.firstname} ${student.lastname} - ${student.pseudoGithub} </a>
-        </li>
+        
+        <a href="#" class="main__students-cards"><img class="user-icon" src="/user-icon.png">${student.firstname} ${student.lastname}</a>
+        
         `;
     }
     html += `
-        </ul>
+        
+        </main>
     </body>
     </html>
     `;
