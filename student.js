@@ -1,0 +1,155 @@
+const students = [
+    {
+        firstname: "Adrien",
+        lastname: "DESCLAUX",
+        pseudoGithub: "AdrienDesclaux",
+        anecdoteMarrante: "J'ai mangé avec le présentateur de Fort Boyard, Olivier Minne.",
+    },
+    {
+        firstname: "Alex",
+        lastname: "LACZKO",
+        pseudoGithub: "laczko-alex",
+        anecdoteMarrante: "Je suis allé me couper les cheveux 3 fois dans la meme journée car les deux premiers coiffeurs se sont fail",
+    },
+    {
+        firstname: "Dorian",
+        lastname: "CAILLAT",
+        pseudoGithub: "DorianCaillat",
+        anecdoteMarrante: "J'ai 7 chats.",
+    },
+    {
+        firstname: "Gaëtan",
+        lastname: "FRAYSSE",
+        pseudoGithub: "Fraysse-Gaetan",
+        anecdoteMarrante: "Euh, alors là !",
+    },
+    {
+        firstname: "Anthony",
+        lastname: "HARIZI",
+        pseudoGithub: "HARIZI-Anthony",
+        anecdoteMarrante: "RAS - J'ai une vie plate",
+    },
+    {
+        firstname: "Houd",
+        lastname: "ALAMI",
+        pseudoGithub: "HoudAlami",
+        anecdoteMarrante: "Mon père m'a oublié avec mon frère sur une aire d'autoroute au Maroc, de nuit.",
+    },
+    {
+        firstname: "Mahamat Ismail",
+        lastname: "IBRAHIM",
+        pseudoGithub: "IbrahimMahamatIsmail",
+        anecdoteMarrante: "imis_brahim",
+    },
+    {
+        firstname: "Emmanuelle",
+        lastname: "CAHOREAU",
+        pseudoGithub: "EmmanuelleCh",
+        anecdoteMarrante: "J'ai rencontré Soulja Boy (rappeur reconnu of course).",
+    },
+    {
+        firstname: "Isabelle",
+        lastname: "BANREZES",
+        pseudoGithub: "isabellebanrezes",
+        anecdoteMarrante: `J'ai déclenché l'alarme incidie de ma boite soit 800 personnes!On n'a pas travaillé de la journée à cause de ça le temps d'évacuer tout le monde.`,
+    },
+    {
+        firstname: "Jean-Marc",
+        lastname: "BASTAREAUD",
+        pseudoGithub: "@jean-marcBastareaudOclockStudent",
+        anecdoteMarrante: "c'etait dans a Vegas pour l'emterrement de vie de garcon d'un pote, nous sommes partis en soiree , on s'est fait refoule pour se retrouver dans l'aniiversaire de dj jazzy jeff (Jazz du prince de bel air)!!!",
+    },
+    {
+        firstname: "Mathilde",
+        lastname: "MORELLON",
+        pseudoGithub: "mathildemorellon",
+        anecdoteMarrante: "Je suis très maniaque !",
+    },
+    {
+        firstname: "Maxime",
+        lastname: "MORMIN-BOUDOT",
+        pseudoGithub: "mMormin",
+        anecdoteMarrante: `J'ai voulu attraper un sac plastique dans la mer en Martinique. Il y avait en fait pleins de sacs plastiques! C'était en fait des méduses et non des sacs plastiques. Je suis allergique aux piqures.
+        La solution de mon bled, c'est "s'uriner dessus" mais j'étais dans les pommes et ca n'aurait pas été vraiment possible ^^'`,
+    },
+    {
+        firstname: "Maïssane",
+        lastname: "SEKKAÏ",
+        pseudoGithub: "MaissaneSekkai",
+        anecdoteMarrante: "0 inspi",
+    },
+    {
+        firstname: "Mohamed",
+        lastname: "BABA AISSA",
+        pseudoGithub: "mohamed-babaaissa",
+        anecdoteMarrante: "j'ai déjà vu des personnes essayer d'aller attrapper un requin en Algérie mdrrrr en fait c'était un poisson lune ",
+    },
+    {
+        firstname: "Ndeye",
+        lastname: "FALL",
+        pseudoGithub: "NdeyeFll",
+        anecdoteMarrante: "RAS",
+    },
+    {
+        firstname: "Olivier",
+        lastname: "SENE",
+        pseudoGithub: "Sene-Olivier",
+        anecdoteMarrante: "J'ai été dans le meme hotel que Kim Jong Un",
+    },
+    {
+        firstname: "Pedro",
+        lastname: "ALVES",
+        pseudoGithub: "",
+        anecdoteMarrante: "",
+    },
+    {
+        firstname: "Romain",
+        lastname: "MOREL",
+        pseudoGithub: "fyrius",
+        anecdoteMarrante: "Je préfère Vivaldi car je trouve que Mozart est une fraude (un genie certe mais une fraude)",
+    },
+    {
+        firstname: "William",
+        lastname: "VIRANIN",
+        pseudoGithub: "WiliamViranin",
+        anecdoteMarrante: "Je me suis 'battu' avec une autruche dans un zoo quand j'étais petit",
+    },
+    {
+        firstname: "Vanessa",
+        lastname: "VALENCIA-GARCIA",
+        pseudoGithub: "",
+        anecdoteMarrante: "",
+    },
+    {
+        firstname: "Alexandre",
+        lastname: "JOLIET",
+        pseudoGithub: "alexandre-joliet",
+        anecdoteMarrante: "J'ai déjà dormi dans un désert alors que bien sûr c'était interdit (outlaw for life)",
+    },
+    {
+        firstname: "Hugo",
+        lastname: "ROUF",
+        pseudoGithub: "HugoROUF",
+        anecdoteMarrante: "Un jour j'ai vu décoller une fusée - in real life - au Kennedy Space Center.",
+    },
+    {
+        firstname: "Maria",
+        lastname: "GRAIRI",
+        pseudoGithub: "mariabens",
+        anecdoteMarrante: "rien pour le moment!",
+    },
+    {
+        firstname: "Norosoa",
+        lastname: "RAZAFIMAHALEO",
+        pseudoGithub: "",
+        anecdoteMarrante: "",
+    },
+    {
+        firstname: "Victor",
+        lastname: "MARC",
+        pseudoGithub: "VmMarc",
+        anecdoteMarrante: "Une fois j'ai raté l'avion au retour du Japon je suis resté bloqué 14h a Shangai. J'avais mes écouteurs et j'ai attendu 6h devant la mauvaise porte d'embarquement...",
+    },
+]
+
+module.exports = students;
