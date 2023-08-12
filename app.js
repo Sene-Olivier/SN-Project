@@ -67,12 +67,30 @@ function createHomePage() {
         <link rel="stylesheet" type="text/css" href="/styles.css">
         </head>
         <body>
-        <header><img class="logo" src="/CC-logo.png"></span></header>
-            <main class="main__container">
-        <p>Il y a ${students.length} apprenants dans cette promo.</p>
-        <p>Cette promo est animée par ${promo.helper}, et ${promo.prof} !</p>
+        <header><img class="logo" src="/CC-logo.png"></header>
+            <main>
+            <div class="main__container">
+                <div class="main__container-left">
+                    <h1 class="main__title">The unofficial website of the promo Cheesecake</h1>
+                    <p>Cette promo est animée par ${promo.helper}, et ${promo.prof} !</p>
+                    <div class="main__button-container">
+                        <a href="/students" class="main__button">Voir la liste des ${students.length} étudiants</a>
+                    </div>
+                </div>
+                <div class="main__container-right">
+                    <img class="main__img" src="/container-right-img.png">
+                </div>
+            </div>
+        <div class="main__bottom-container">
+            <h3>Ils ne nous ont pas encore fait confiance</h3>
+            <div class="main__logos-container">
+                <img class="main__logos" src="/ibm-logo.png">
+                <img class="main__logos" src="/oracle-logo.png">
+                <img class="main__logos" src="/spacex-logo.png">
+                <img class="main__logos" src="/microsoft-logo.png">
+            </div>
+        </di>
 
-        <a href="/students" class="main__button">Voir la liste des étudiants</a>
             </main>
         </body>
         </html>
