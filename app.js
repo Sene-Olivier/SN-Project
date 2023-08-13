@@ -72,7 +72,7 @@ function createHomePage() {
                 <div class="main__container">
                     <div class="main__container-left">
                         <h1 class="main__title">The unofficial Cheesecake website</h1>
-                        <p>Cette promo est animée par ${promo.helper}, et ${promo.prof} !</p>
+                        <p>Cette promo est animée par ${promo.helper} et ${promo.prof} !</p>
                         <div class="main__button-container">
                             <a href="/students" class="main__button">Voir la liste des ${students.length} étudiants</a>
                         </div>
@@ -121,7 +121,11 @@ function createStudentsListPage(studentsList) {
     for (const student of studentsList.slice().sort((a, b) => a.lastname.localeCompare(b.lastname))) {
         html += `
         
-            <a href="#" class="main__students-cards"><img class="user-icon" src="/user-icon.png">${student.firstname} ${student.lastname}</a>
+            <a href="#" class="main__students-cards">
+            <img class="user-icon" src="/user-logo.png">
+            <div class="firstname">${student.firstname}</div> 
+            <div class="lastname">${student.lastname}</div>
+            </a>
         
         `;
     }
