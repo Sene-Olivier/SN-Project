@@ -140,11 +140,11 @@ main {
 
 .main__students-container {
     border: 1px solid darkgrey;
-    margin: 30px;
+    background-color: #9279FF;
     width: 85%;
     padding: 30px;
     border-radius: 15px;
-    margin: auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -154,11 +154,11 @@ main {
 
 .main__students-cards {
     box-sizing: border-box;
-    background-color: #9279FF;
-    color: white;
+    background-color: white;
+    color: rgb(195, 193, 193);
     font-weight: 600;
-    width: 40%; 
-    padding: 5px;
+    width: 30%;
+    padding: 12px;
     border-radius: 15px;
     box-shadow: 8px 7px 15px -8px rgba(0,0,0,0.55);
     display: flex;
@@ -169,9 +169,9 @@ main {
 
 .main__students-cards:hover {
     transform: scale(1.02);
-    color: white;
+    color: #9279FF;
 }
 
 .user-icon {
-    width: 40px;
+    width: 50px;
 }
